@@ -1,0 +1,11 @@
+# instalar electron como independencia
+  npm install electron --save-dev
+
+# Executar aplicativo
+  npx electron .
+
+# Criar aplicativo
+  npm install -g electron-packager
+
+# Gerar arquivo exe
+  electron-packager . relogiocr --plataform=win32 --arch=x64 --out=dist
