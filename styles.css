@@ -1,0 +1,123 @@
+body {
+  background-color: #09090b;
+  color: #e5e7eb;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+.container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+}
+.column {
+  flex: 1;
+  background-color: #18181b;
+  border-radius: 8px;
+  padding: 20px;
+  height: 840px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #d4d4d8;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #d4d4d8;
+  display: block;
+}
+input[type="text"],
+input[type="date"],
+input[type="password"] {
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  color: #d4d4d8;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.875rem;
+}
+input:focus {
+  border-color: #f59e0b;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+button {
+  background-color: #f59e0b;
+  color: #27272a;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+button:hover {
+  background-color: #fbbf24;
+}
+.output {
+  background-color: #09090b;
+  border: 1px solid #3333;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+  font-family: 'Menlo', monospace;
+  color: #d1d5db;
+  -webkit-app-region: no-drag ; /*no-drag ou drag*/
+
+  &::-webkit-scrollbar {
+    width: 8px;   /* largura da barra vertical */
+    height: 8px;  /* altura da barra horizontal */
+  }
+
+  /* Trilho (fundo da barra) */
+  &::-webkit-scrollbar-track {
+    background: #3f3f46;
+    border-radius: 10px;
+  }
+
+  /* "Thumb" (a parte que desliza) */
+  &::-webkit-scrollbar-thumb {
+    background: #f59e0b;
+    border-radius: 10px;
+  }
+
+  /* Efeito hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.output p {
+  margin: 5px 0;
+}
+.error {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.sucess {
+  color: #16a34a;
+}

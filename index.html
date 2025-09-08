@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automação de Tarefas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Coluna de Controle de Tarefas -->
+        <div class="column">
+            <h2>Controle de Tarefas</h2>
+            <div class="form-group">
+                <label for="task-time-from">From Date</label>
+                <input type="date" id="task-time-from">
+            </div>
+            <div class="form-group">
+                <label for="task-time-to">To Date</label>
+                <input type="date" id="task-time-to">
+            </div>
+            <button id="schedule-btn">Verificar Logs</button>
+            <div class="output" id="task-output">
+                <p>Aguardando atualizações...</p>
+            </div>
+        </div>
+        <!-- Coluna de Monitoramento -->
+        <div class="column">
+            <h2>Monitoramento</h2>
+            <div class="form-group">
+                <label for="task-name">Usuário</label>
+                <input type="text" id="task-name" placeholder="Usuário Glpi">
+            </div>
+            <div class="form-group">
+                <label for="task-name">Senha</label>
+                <input type="password" id="task-name"  placeholder="Senha Glpi">
+            </div>
+            <button id="monitor-btn">Tramitar Tarefas</button>
+            <div class="output" id="monitor-output">
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+                <p>Aguardando dados...</p>
+            </div>
+        </div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
