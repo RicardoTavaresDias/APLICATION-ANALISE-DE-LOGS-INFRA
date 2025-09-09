@@ -1,7 +1,7 @@
 // Configurações fictícias (substitua por endpoints reais)
 const API_BASE_URL = 'http://localhost:3333'
 const WS_TASKS_URL = 'ws://localhost:3333/ws1'
-const WS_MONITOR_URL = 'ws://api.example.com/ws-monitor'
+const WS_MONITOR_URL = 'ws://localhost:3333/ws2'
 
 function addMessage(outputId, message, isError = false) {
     const output = document.getElementById(outputId)
@@ -13,7 +13,8 @@ function addMessage(outputId, message, isError = false) {
     output.scrollTop = output.scrollHeight
 }
 
-let taskWs, monitorWs
+let taskWs
+let monitorWs
 
   taskWs = new WebSocket(WS_TASKS_URL)
     taskWs.onopen = () => addMessage('task-output', 'Conexão servidor estabelecida.')
@@ -21,9 +22,9 @@ let taskWs, monitorWs
     taskWs.onclose = () => addMessage('task-output', 'Conexão fechada.')
 
 
-function connectMonitorWs() {
+
     monitorWs = new WebSocket(WS_MONITOR_URL)
+
     monitorWs.onopen = () => addMessage('monitor-output', 'Monitoramento iniciado.')
     monitorWs.onmessage = (event) => addMessage('monitor-output', event.data)
     monitorWs.onclose = () => addMessage('monitor-output', 'Monitoramento encerrado.')
-}
