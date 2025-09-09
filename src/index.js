@@ -25,6 +25,6 @@ let monitorWs
 
     monitorWs = new WebSocket(WS_MONITOR_URL)
 
-    monitorWs.onopen = () => addMessage('monitor-output', 'Monitoramento iniciado.')
+    monitorWs.onopen = () => addMessage('monitor-output', 'Conexão Servidor monitoramento estabelecida.')
     monitorWs.onmessage = (event) => addMessage('monitor-output', event.data)
     monitorWs.onclose = () => addMessage('monitor-output', 'Monitoramento encerrado.')
