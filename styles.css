@@ -67,10 +67,11 @@ input:focus {
 .errLogs, .errGlpi {
   font-size: 12px;
   font-weight: 500;
+  font-size: 0.6rem;
 }
 
 .errLogs img , .errGlpi img {
-  width: 18px;
+  width: 12px;
   height: auto;
   filter: invert(31%) sepia(83%) saturate(6071%) hue-rotate(0deg) brightness(94%) contrast(91%);
 }
