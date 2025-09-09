@@ -25,15 +25,3 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
-
-
-
-
-/*
-    width: 1000,
-    height: 720,
-
-    width: 1000,
-    height: 675,
-*/
