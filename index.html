@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automação de Tarefas</title>
 
+    <!-- flatpickr module -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/confetti.css">
+
+    <!-- google fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- cdn -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,16 +22,13 @@
     <div class="container">
         <!-- Coluna de Controle de Tarefas -->
         <div class="column">
-            <h2>Controle de Tarefas</h2>
+            <h2>Execução de Logs</h2>
             <div class="form-group">
-                <label for="task-time-from">From Date</label>
-                <input type="date" id="task-time-from">
+                <label for="task-time-from">Período</label>
+                <input type="text" id="date-range" placeholder="Selecione o intervalo de datas">
             </div>
-            <div class="form-group">
-                <label for="task-time-to">To Date</label>
-                <input type="date" id="task-time-to">
-            </div>
-            <button id="schedule-btn">Verificar Logs</button>
+            
+            <button id="schedule-btn">Organizar Logs</button>
             <div class="output" id="task-output">
                 <p>Aguardando atualizações...</p>
             </div>
@@ -70,6 +73,16 @@
             </div>
         </div> 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script>
+        flatpickr("#date-range", {
+            mode: "range",          // Ativa o modo de intervalo
+            dateFormat: "Y-m-d",    // Formato da data
+        })
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>

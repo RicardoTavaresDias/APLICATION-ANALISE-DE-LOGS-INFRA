@@ -9,3 +9,7 @@
 
 # Gerar arquivo exe
   electron-packager . relogiocr --plataform=win32 --arch=x64 --out=dist
+
+
+biblioteca de data
+  https://flatpickr.js.org/plugins/

@@ -42,7 +42,6 @@ label {
   display: block;
 }
 input[type="text"],
-input[type="date"],
 input[type="password"] {
   background-color: #27272a;
   border: 1px solid #3f3f46;
