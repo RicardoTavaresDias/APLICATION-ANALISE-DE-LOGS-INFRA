@@ -35,12 +35,14 @@ h2 {
 .form-group {
   margin-bottom: 15px;
 }
+
 label {
   margin-bottom: 5px;
   font-weight: 500;
   color: #d4d4d8;
   display: block;
 }
+
 input[type="text"],
 input[type="password"] {
   background-color: #27272a;
@@ -52,11 +54,33 @@ input[type="password"] {
   width: 100%;
   font-size: 0.875rem;
 }
+
 input:focus {
   border-color: #f59e0b;
   outline: none;
   box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
 }
+
+.errLogs, .errGlpi {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.errLogs img , .errGlpi img {
+  width: 18px;
+  height: auto;
+  filter: invert(31%) sepia(83%) saturate(6071%) hue-rotate(0deg) brightness(94%) contrast(91%);
+}
+
+.alert, .alertGlpi {
+  margin-block: 15px;
+  display: flex;
+  gap: 5px;
+  color: #ef4444;
+  justify-content: start;
+  align-items: center;
+}
+
 button {
   background-color: #f59e0b;
   color: #27272a;

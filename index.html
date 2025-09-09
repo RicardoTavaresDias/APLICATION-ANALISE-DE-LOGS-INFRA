@@ -25,7 +25,8 @@
             <h2>Execução de Logs</h2>
             <div class="form-group">
                 <label for="task-time-from">Período</label>
-                <input type="text" id="date-range" placeholder="Selecione o intervalo de datas">
+                <input type="text" id="date-range" placeholder="Selecione o intervalo de datas" >
+                <span class="errLogs"></span>
             </div>
             
             <button id="schedule-btn">Organizar Logs</button>
@@ -42,8 +43,9 @@
             </div>
             <div class="form-group">
                 <label for="task-name">Senha</label>
-                <input type="password" id="task-name"  placeholder="Senha Glpi">
+                <input type="password" id="task-password"  placeholder="Senha Glpi">
             </div>
+            <span class="errGlpi"></span>
             <button id="monitor-btn">Tramitar Tarefas</button>
             <div class="output" id="monitor-output">
                 <p>Aguardando dados...</p>
@@ -77,12 +79,14 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <script>
-        flatpickr("#date-range", {
+        const inputDate = flatpickr("#date-range", {
             mode: "range",          // Ativa o modo de intervalo
             dateFormat: "Y-m-d",    // Formato da data
         })
     </script>
 
-    <script src="script.js"></script>
+    <script src="./src/index.js"></script>
+    <script src="./src/useDateLogs.js"></script>
+    <script src="./src/useGlpi.js"></script>
 </body>
 </html>
