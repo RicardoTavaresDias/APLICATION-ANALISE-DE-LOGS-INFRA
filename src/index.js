@@ -1,6 +1,6 @@
 // Configurações fictícias (substitua por endpoints reais)
 const API_BASE_URL = 'http://localhost:3333'
-const WS_TASKS_URL = 'ws://localhost:3333'
+const WS_TASKS_URL = 'ws://localhost:3333/ws1'
 const WS_MONITOR_URL = 'ws://api.example.com/ws-monitor'
 
 function addMessage(outputId, message, isError = false) {
