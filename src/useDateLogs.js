@@ -36,7 +36,7 @@ document.getElementById('schedule-btn')?.addEventListener('click', async () => {
         if (response.ok) {
             addMessage('task-output', '<p class="sucess">✅ Logs Concluido!</p>')
         } else {
-            addMessage('task-output', responseJson.message, true)
+            addMessage('task-output', `<p>${responseJson.message}</p>`, true)
         }
 
     } catch (error) {
