@@ -22,6 +22,8 @@ document.getElementById('monitor-btn')?.addEventListener('click', async () => {
       </div>
       `.trim()
   }
+  
+  addMessage('monitor-output', '<p>Acessando GLPI...</p>')
 
   try {
         const response = await fetch(`${API_BASE_URL}`, {
