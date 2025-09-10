@@ -31,10 +31,12 @@ document.getElementById('schedule-btn')?.addEventListener('click', async () => {
             })
         })
 
+        const responseJson = await response.json()
+
         if (response.ok) {
             addMessage('task-output', '<p class="sucess">✅ Logs Concluido!</p>')
         } else {
-            addMessage('task-output', '<p>É necessário informar a data de início e a data de término para continuar.</p>', true)
+            addMessage('task-output', responseJson.message, true)
         }
 
     } catch (error) {
