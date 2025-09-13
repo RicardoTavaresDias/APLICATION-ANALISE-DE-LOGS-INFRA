@@ -3,6 +3,9 @@ const API_BASE_URL = 'http://localhost:3333'
 const WS_TASKS_URL = 'ws://localhost:3333/ws1'
 const WS_MONITOR_URL = 'ws://localhost:3333/ws2'
 
+// Desabilita o botão do glpi
+document.getElementById("monitor-btn").disabled = true
+
 function addMessage(outputId, message, isError = false) {
     const output = document.getElementById(outputId)
     if (!output) return
@@ -15,6 +18,7 @@ function addMessage(outputId, message, isError = false) {
 
 let taskWs
 let monitorWs
+let dateLogs
 
   taskWs = new WebSocket(WS_TASKS_URL)
     taskWs.onopen = () => addMessage('task-output', 'Conexão servidor estabelecida.')
@@ -26,5 +30,9 @@ let monitorWs
     monitorWs = new WebSocket(WS_MONITOR_URL)
 
     monitorWs.onopen = () => addMessage('monitor-output', 'Conexão Servidor monitoramento estabelecida.')
-    monitorWs.onmessage = (event) => addMessage('monitor-output', event.data)
+    monitorWs.onmessage = (event) => { 
+      addMessage('monitor-output', event.data)
+      document.getElementById("schedule-btn").disabled = false
+    }
     monitorWs.onclose = () => addMessage('monitor-output', 'Monitoramento encerrado.')
+

@@ -24,8 +24,10 @@ document.getElementById('monitor-btn')?.addEventListener('click', async () => {
   }
   
   addMessage('monitor-output', '<p>Acessando GLPI...</p>')
-
+  console.log(dateLogs)
+  
   try {
+        document.getElementById("monitor-btn").disabled = true
         const response = await fetch(`${API_BASE_URL}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -40,12 +42,14 @@ document.getElementById('monitor-btn')?.addEventListener('click', async () => {
         if (response.ok) {
             addMessage('monitor-output', '<p class="sucess">✅ Processo Concluido.</p>')
         } else {
-            addMessage('monitor-output', `<p>${responseJson.message}</p>`, true)
+           addMessage('monitor-output', `<p>${responseJson.message}</p>`, true)
         }
-
+        
     } catch (error) {
         addMessage('monitor-output', 'Erro de conexão.', true)
-    } 
+    } finally {
+      document.getElementById("monitor-btn").disabled = false
+    }
 
   connectMonitorWs()
 })

@@ -22,6 +22,7 @@ document.getElementById('schedule-btn')?.addEventListener('click', async () => {
     inputDate.clear()
     
     try {
+        document.getElementById("schedule-btn").disabled = true
         const response = await fetch(`${API_BASE_URL}/logs`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -31,9 +32,15 @@ document.getElementById('schedule-btn')?.addEventListener('click', async () => {
             })
         })
 
+        dateLogs = {
+            "dateStart": taskTimeFrom.trim(),
+            "dateEnd": taskTimeTo.trim()
+        }
+
         const responseJson = await response.json()
 
         if (response.ok) {
+            document.getElementById("monitor-btn").disabled = false
             addMessage('task-output', '<p class="sucess">✅ Logs Concluido!</p>')
         } else {
             addMessage('task-output', `<p>${responseJson.message}</p>`, true)
