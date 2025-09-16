@@ -24,7 +24,6 @@ document.getElementById('monitor-btn')?.addEventListener('click', async () => {
   }
   
   addMessage('monitor-output', '<p>Acessando GLPI...</p>')
-  console.log(dateLogs)
   
   try {
         document.getElementById("monitor-btn").disabled = true
@@ -33,7 +32,10 @@ document.getElementById('monitor-btn')?.addEventListener('click', async () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               "user": user.value.trim(),
-              "password": password.value.trim()
+              "password": password.value.trim(),
+              "dateInterval": {
+                ...dateLogs
+              }
             })
         })
 
